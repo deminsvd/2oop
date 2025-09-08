@@ -78,12 +78,12 @@ class Zombie extends Character{
 }
 
 
-const bowerman = new Bowerman ('bowerman');
-const swordsman = new Swordsman ('swordsman');
-const magician = new Magician ('magician');
-const daemon = new Daemon ('daemon');
-const undead = new Undead ('undead');
-const zombie = new Zombie ('zombie');
+const _bowerman = new Bowerman ('bowerman');
+const _swordsman = new Swordsman ('swordsman');
+const _magician = new Magician ('magician');
+const _daemon = new Daemon ('daemon');
+const _undead = new Undead ('undead');
+const _zombie = new Zombie ('zombie');
 
 
 

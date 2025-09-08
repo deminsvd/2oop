@@ -3,25 +3,25 @@ import { Bowerman } from "../character.js";
 
 test ('characterlength', () => {
     expect(() => {
-        const character = new Character('charactercharacter', 'Bowerman', 100, 1, 25, 25);
+        const _character = new Character('charactercharacter', 'Bowerman', 100, 1, 25, 25);
     }).toThrow('Параметры героя не корректны');
 })
 
 test ('characterlength2', () => {
     expect(() => {
-        const character = new Character('c', 'Bowerman', 25, 25);
+        const _character = new Character('c', 'Bowerman', 25, 25);
     }).toThrow('Параметры героя не корректны');
 })
 
 test ('charactertype', () => {
     expect(() => {
-        const character = new Character('character', 'Bower', 100, 1, 25, 25);
+        const _character = new Character('character', 'Bower', 100, 1, 25, 25);
     }).toThrow('Параметры героя не корректны');
 })
 
 test ('characterBow', () => {
     expect(() => {
-        const bow = new Bowerman('B');
+        const _bow = new Bowerman('B');
     }).toThrow('Параметры героя не корректны');
 })
 
