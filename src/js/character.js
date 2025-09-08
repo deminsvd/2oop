@@ -10,7 +10,7 @@ const characterTypes = [
 
 export class Character {
     constructor(name, type, health, level, attack, defence) {
-        if (name.length < 2 || name.length >10 || !(characterTypes.includes(type))) {
+        if (name.length < 2 || name.length > 10 || !(characterTypes.includes(type))) {
             throw new Error('Параметры героя не корректны');
         }
         this.name = name;
@@ -19,6 +19,24 @@ export class Character {
         this.level = level;
         this.attack = attack;
         this.defence = defence;
+    }
+
+    levelUp() {
+        if (this.health === 0) {
+            throw new Error('Нельзя повысить левел умершего');
+        }
+        this.level = this.level + 1;
+        this.attack *= 1.2;
+        this.defence *= 1.2;
+        this.health = 100;
+    }
+
+    damage(points) {
+        if (this.health <= points * (1 - this.defence / 100)) {
+            this.health = 0;
+        }
+        else 
+            this.health -= points * (1 - this.defence / 100);
     }
 }
 
@@ -29,7 +47,7 @@ export class Bowerman extends Character{
     }
 }
 
-export class Swordsman extends Character{
+class Swordsman extends Character{
     constructor(name) {
         super(name, 'Swordsman', 100, 1, 40, 10);
     }
